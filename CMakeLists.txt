@@ -14,8 +14,8 @@ set_target_properties(object_detection PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 )
 
-# Optional: Füge Header-Dateien hinzu (falls benötigt)
-# target_include_directories(mein_programm PRIVATE include)
+# Füge Header-Dateien hinzu
+target_include_directories(object_detection PRIVATE lib/rpi_sparkfun/include)
 
 # Optional: Füge Bibliotheken hinzu (falls benötigt)
 # target_link_libraries(mein_programm library_name)
