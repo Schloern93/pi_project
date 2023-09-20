@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 
 # Füge die Quellcode-Dateien hinzu
-add_executable(object_detection src/main.cpp)
+add_executable(object_detection src/main.cpp src/a111.cpp)
 
 # Legen Sie das Ausgabeverzeichnis für das Ziel fest
 set_target_properties(object_detection PROPERTIES
@@ -15,7 +15,7 @@ set_target_properties(object_detection PROPERTIES
 )
 
 # Füge Header-Dateien hinzu
-target_include_directories(object_detection PRIVATE lib/rpi_sparkfun/include)
+target_include_directories(object_detection PRIVATE lib/rpi_sparkfun/include/ include/)
 
 # Optional: Füge Bibliotheken hinzu (falls benötigt)
 # target_link_libraries(mein_programm library_name)

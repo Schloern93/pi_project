@@ -12,11 +12,14 @@ public:
     DataAcquisition();
 
     // Destruktor
-    ~DataAcquisition();
+    ~DataAcquisition();  
 
     
     
 private:
+   
+    
+
     
 
 
