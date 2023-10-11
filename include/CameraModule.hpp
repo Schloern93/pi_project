@@ -17,7 +17,7 @@ class CameraModule {
 		~CameraModule();
 		
 		//Public Methods
-		void startCameraModule()
+		void startCameraModule();
 		
 		
 	
