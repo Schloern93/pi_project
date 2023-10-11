@@ -1,0 +1,23 @@
+All can red here ass well: https://www.raspberrypi.com/documentation/computers/camera_software.html#building-libcamera-apps
+--> Here only disciped whta i have done!
+
+1. All libs for testing the Module should be pre installed on pi Debian 11 (Bulseye)
+2. Install
+	1. For the own project u have to install the fowllowing libs as well
+		1. sudo apt install libcamera-dev libepoxy-dev libjpeg-dev libtiff5-dev
+	2. If you want to use the Qt preview window, please also execute
+		1. sudo apt install -y qtbase5-dev libqt5core5a libqt5gui5 libqt5widgets5
+	3. If you want libav support in libcamera-vid, additional libraries must be installed:
+		1. sudo apt install libavcodec-dev libavdevice-dev libavformat-dev libswresample-dev
+	4. First fetch the necessary dependencies for libcamera-apps.
+		1. sudo apt install -y cmake libboost-program-options-dev libdrm-dev libexif-dev
+		2. sudo pip3 install ninja meson
+2. Clone from git
+	1. git clone https://github.com/raspberrypi/libcamera-apps.git
+	2. cd libcamera-apps
+	3. Set all options of your choise
+		1. meson setup build -Denable_libav=true -Denable_drm=true -Denable_egl=true -Denable_qt=true -Denable_opencv=false -Denable_tflite=false
+	4. After setting all the options build it!
+		1. meson compile -C build # use -j1 on Raspberry Pi 3 or earlier devices
+		2. sudo meson install -C build
+		3. sudo ldconfig # this is only necessary on the first build

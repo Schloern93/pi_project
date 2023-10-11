@@ -27,11 +27,12 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=3
+current_page=4
 FILE_NAME_0=95;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2Fmain.cpp;0;4
-FILE_NAME_1=538;CMake;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2FCMakeLists.txt;0;4
+FILE_NAME_1=582;CMake;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2FCMakeLists.txt;0;4
 FILE_NAME_2=225;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Finclude%2FCameraModule.hpp;0;4
-FILE_NAME_3=11;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2FCameraModule.cpp;0;4
+FILE_NAME_3=167;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2FCameraModule.cpp;0;4
+FILE_NAME_4=635;None;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fdocu%2FsetupCameraModule;0;4
 
 [VTE]
-last_dir=/home/pi/wa/pi_project
+last_dir=/home/pi/wa/sdk/libcamera-apps
