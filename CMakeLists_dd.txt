@@ -1,0 +1,50 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(object_detection)
+
+# Setze die gewünschte C++-Standardversion (hier C++11)
+set(CMAKE_CXX_STANDARD 11)
+
+#Path zu SDK
+set(SDK_DIR_A111 "/home/pi/wa/sdk/rpi_sparkfun")
+
+# Füge die Quellcode-Dateien hinzu
+add_executable(object_detection src/main.cpp src/a111.cpp)
+
+# Legen Sie das Ausgabeverzeichnis für das Ziel fest
+set_target_properties(object_detection PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
+
+find_path(SDK_INCLUDE_PATH
+    NAMES acc_rss.h
+    PATHS ${SDK_DIR_A111}/include
+)
+
+if(SDK_INCLUDE_PATH)
+    message(STATUS "SDK-Header-Dateien gefunden in: ${SDK_INCLUDE_PATH}")
+else()
+    message(FATAL_ERROR "SDK-Header-Dateien nicht gefunden. Überprüfen Sie den Pfad zu Ihrem SDK.")
+endif()
+
+
+# Füge Header-Dateien hinzu (falls vorhanden)
+include_directories(include)
+include_directories(${SDK_DIR_A111}/include)
+
+
+# Füge die SDK-Bibliotheken hinzu, die Sie benötigen
+target_link_libraries(object_detection 
+    ${SDK_DIR_A111}/lib/libacc_detector_distance.a
+    ${SDK_DIR_A111}/lib/libacc_detector_obstacle.a
+    ${SDK_DIR_A111}/lib/libacc_detector_presence.a
+    ${SDK_DIR_A111}/lib/libacconeer.a
+    ${SDK_DIR_A111}/lib/libacconeer_exploration_server_a111.a
+    ${SDK_DIR_A111}/lib/libacc_rf_certification_test_a111.a
+    #${SDK_DIR_A111}/lib/libgpiod.so.2
+)
+
+
+#message(STATUS "SDK_DIR_A111: ${SDK_DIR_A111}")
+#message(STATUS "Include-Pfad: ${SDK_DIR_A111}/include")
+#message(STATUS "Include-Pfad: ${SDK_DIR_A111}/lib")

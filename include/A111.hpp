@@ -6,10 +6,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "acc_rss.h"
-#include "acc_detector_distance.h"
-#include "acc_hal_definitions.h"
-#include "acc_hal_integration.h"
+
+#include <acc_rss.h>
+#include <acc_detector_distance.h>
+#include <acc_hal_definitions.h>
+#include <acc_hal_integration.h>
 
 //Constants
 static const float EXAMPLE_START_M = 0.2f;

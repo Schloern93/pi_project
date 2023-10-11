@@ -1,0 +1,55 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(object_detection)
+
+# Set C++-Standardversion (C++11)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+
+#Path to SDK
+set(SDK_DIR_A111 "/home/pi/wa/sdk/rpi_sparkfun")
+
+# Add static libs
+add_library(libacc_detector_distance STATIC IMPORTED GLOBAL)
+add_library(libacconeer STATIC IMPORTED GLOBAL)
+add_library(libacconeer_exploration_server_a111 STATIC IMPORTED GLOBAL)
+add_library(libacc_rf_certification_test_a111 STATIC IMPORTED GLOBAL)
+
+# Set Properties for libs
+set_target_properties(libacc_detector_distance PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${SDK_DIR_A111}/include)
+set_target_properties(libacc_detector_distance PROPERTIES IMPORTED_LOCATION ${SDK_DIR_A111}/lib/libacc_detector_distance.a)
+
+set_target_properties(libacconeer PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${SDK_DIR_A111}/include)
+set_target_properties(libacconeer PROPERTIES IMPORTED_LOCATION ${SDK_DIR_A111}/lib/libacconeer.a)
+
+set_target_properties(libacconeer_exploration_server_a111 PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${SDK_DIR_A111}/include)
+set_target_properties(libacconeer_exploration_server_a111 PROPERTIES IMPORTED_LOCATION ${SDK_DIR_A111}/lib/libacconeer_exploration_server_a111.a)
+
+set_target_properties(libacc_rf_certification_test_a111 PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${SDK_DIR_A111}/include)
+set_target_properties(libacc_rf_certification_test_a111 PROPERTIES IMPORTED_LOCATION ${SDK_DIR_A111}/lib/libacc_rf_certification_test_a111.a)
+
+
+# Add cpp
+add_executable(object_detection src/main.cpp src/a111.cpp)
+
+# Set out dir for Runtime
+set_target_properties(object_detection PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
+
+
+# Add include dir for project
+include_directories(include)
+
+
+# Link libs
+target_link_libraries(object_detection PUBLIC   
+    libacc_detector_distance    
+    libacc_rf_certification_test_a111    
+    libacconeer_exploration_server_a111
+    libacconeer
+)
+
+
+#message(STATUS "SDK_DIR_A111: ${SDK_DIR_A111}")
+#message(STATUS "Include-Pfad: ${SDK_DIR_A111}/include")
+#message(STATUS "Include-Pfad: ${SDK_DIR_A111}/lib")
