@@ -1,0 +1,5 @@
+1. Download SDK from Aconeer Homepage:
+2. Add the libs in the CMakeLists.txt.
+3. If u using c++ u have ti include the .h files with extern otherwise u C++ Compiler cannot read them
+4. The libs are usually in 32 bit. If u are using a 64 bit version u have to ask the support for this
+5. If u had the 64 bit libs u should able to compile everything
