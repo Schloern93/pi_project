@@ -21,23 +21,25 @@ void A111::printA111Version()
 
 void A111::startDistanceDetector()
 {
-    if (!A111::initDistanceDetector())
+    if (A111::initDistanceDetector())
     {
         // Try to activate distance handler
         if (!acc_detector_distance_activate(distance_handle))
         {
-            printf("Starting doesent work!!!");
+            printf("Starting doesent work!!! \n");
             acc_detector_distance_destroy(&distance_handle);
             acc_rss_deactivate();
             return;
         }
-        printf("Starting was sucessfull");        
+        printf("Starting was sucessfull \n");        
     }
     else
     {
-        printf("Init was noch sucesfull. Stating not possible!");
+        printf("Init was not sucesfull. Stating not possible! \n");
         return;
     }
+    A111::print_results();
+
 }
 
 void A111::endDistanceDetector()
@@ -46,7 +48,7 @@ void A111::endDistanceDetector()
     acc_detector_distance_destroy(&distance_handle);
     acc_rss_deactivate();
 
-    printf("Application finished OK\n");
+    printf("Application finished OK \n");
 }
 
 bool A111::initDistanceDetector()
@@ -56,9 +58,9 @@ bool A111::initDistanceDetector()
     //Check if RSS working
     if (!acc_rss_activate(hal))
     {
-        printf("Activation RSS Failed!!!");
+        printf("Activation RSS Failed!!! \n");
         acc_rss_deactivate();
-        return 0;
+        return false;
     }    
 
     // Create a configuration File for the detector (Default parameters)
@@ -67,10 +69,10 @@ bool A111::initDistanceDetector()
     // Check if distance configuration file is created
     if (distance_configuration == NULL)
     {
-        printf("Creating Configuration File failed!!!!");
+        printf("Creating Configuration File failed!!!! \n");
         acc_detector_distance_configuration_destroy(&distance_configuration);
         acc_rss_deactivate();
-        return 0;
+        return false;
     }
 
     // Set the configuration File
@@ -81,13 +83,13 @@ bool A111::initDistanceDetector()
     // CHeck is distance handler avaiable
     if (distance_handle == NULL)
     {
-        printf("Creating Distance Handler failed!!!!");
+        printf("Creating Distance Handler failed!!!! \n");
         acc_detector_distance_configuration_destroy(&distance_configuration);
         acc_rss_deactivate();
-        return 0;
+        return false;
     }
 
-    printf("initialication was succesfull");
+    printf("initialication was succesfull \n");
     return true;    
 }
 
@@ -98,23 +100,23 @@ void A111::print_results()
     acc_detector_distance_result_t      result[num_of_peaks];
     acc_detector_distance_result_info_t result_info;
 
-    for (size_t i = 0; i < 20; i++)
+    for (size_t i = 0; i < 5; i++)
     {
         success = acc_detector_distance_get_next(distance_handle, result, num_of_peaks, &result_info);
 
         if (!success)
         {
-            printf("print was not possbile becouse no valid data");
+            printf("print was not possbile becouse no valid data \n");
             break;
         }
 
         // Print values
-        printf("Num of Peaks:", (unsigned int)result_info.number_of_peaks, "/n");
+        std::cout << "Num of Peaks: " << (unsigned int)result_info.number_of_peaks << "\n";
 
         for (size_t k = 0; k < result_info.number_of_peaks; k++)
-        {
-            printf("Amplitude: ", (unsigned int)result[k].amplitude);
-            printf("Amplitude: ", (unsigned int)result[k].distance_m);
+        {            
+            std::cout << "Amplitude: " << (unsigned int)result[k].amplitude << "\n";
+            std::cout << "Distance: " << (unsigned int)(result[k].distance_m*1000) << " mm" <<"\n";            
         }
     }
 }

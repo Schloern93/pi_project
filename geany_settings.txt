@@ -27,10 +27,11 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=2
-FILE_NAME_0=362;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2Fmain.cpp;0;4
-FILE_NAME_1=19;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2FA111.cpp;0;4
-FILE_NAME_2=885;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Finclude%2FA111.hpp;0;4
+current_page=1
+FILE_NAME_0=485;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2Fmain.cpp;0;4
+FILE_NAME_1=2950;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2FA111.cpp;0;4
+FILE_NAME_2=567;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Finclude%2FA111.hpp;0;4
+FILE_NAME_3=1681;CMake;0;EUTF-8;2;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2FCMakeLists.txt;0;8
 
 [VTE]
 last_dir=/home/pi/wa/pi_project

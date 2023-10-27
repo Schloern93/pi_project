@@ -51,4 +51,5 @@ target_link_libraries(object_detection PUBLIC
     gpiod
 )
 
+#message(STATUS "SDK_DIR_A111: ${SDK_DIR_A111}")
 

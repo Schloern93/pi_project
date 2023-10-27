@@ -11,6 +11,7 @@ int main(int argc, char** argv){
     
     a111object.printA111Version();
     a111object.startDistanceDetector();
+    //a111object.print_results();
     a111object.endDistanceDetector();
     
     
