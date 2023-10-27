@@ -27,12 +27,17 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=4
-FILE_NAME_0=95;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2Fmain.cpp;0;4
-FILE_NAME_1=582;CMake;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2FCMakeLists.txt;0;4
-FILE_NAME_2=225;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Finclude%2FCameraModule.hpp;0;4
-FILE_NAME_3=167;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2FCameraModule.cpp;0;4
-FILE_NAME_4=635;None;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fdocu%2FsetupCameraModule;0;4
+current_page=9
+FILE_NAME_0=622;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2Fmain.cpp;0;4
+FILE_NAME_1=1175;CMake;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2FCMakeLists.txt;0;4
+FILE_NAME_2=2193;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Fsrc%2FA111.cpp;0;4
+FILE_NAME_3=290;C++;0;EUTF-8;0;1;0;%2Fhome%2Fpi%2Fwa%2Fpi_project%2Finclude%2FA111.hpp;0;4
+FILE_NAME_4=1847;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fsdk%2Frpi_sparkfun%2Fsource%2Facc_libspi.c;0;4
+FILE_NAME_5=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fsdk%2Frpi_sparkfun%2Finclude%2Facc_libspi.h;0;4
+FILE_NAME_6=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fsdk%2Frpi_sparkfun%2Finclude%2Facc_libgpiod.h;0;4
+FILE_NAME_7=2864;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fsdk%2Frpi_sparkfun%2Fsource%2Facc_libgpiod.c;0;4
+FILE_NAME_8=3201;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fsdk%2Frpi_sparkfun%2Fsource%2Facc_board_rpi_sparkfun.c;0;4
+FILE_NAME_9=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwa%2Fsdk%2Frpi_sparkfun%2Fsource%2Fexample_detector_distance.c;0;4
 
 [VTE]
-last_dir=/home/pi/wa/sdk/libcamera-apps
+last_dir=/home/pi/wa/pi_project

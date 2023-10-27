@@ -6,12 +6,15 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+extern "C"{
+    #include "acc_detector_distance.h"
+    #include "acc_hal_definitions.h"
+    #include "acc_hal_integration.h"
+    #include "acc_rss.h"
+    #include "acc_version.h"       
+}
 
-#include <acc_rss.h>
-#include <acc_detector_distance.h>
-#include <acc_hal_definitions.h>
-#include <acc_hal_integration.h>
-#include "acc_version.h"
+
 
 //Constants
 static const float EXAMPLE_START_M = 0.2f;
@@ -32,8 +35,6 @@ public:
     uint16_t num_of_peaks;
     
 
-
-
     // Constructor
     A111();
 
@@ -43,6 +44,7 @@ public:
     //Methoden
     void startDistanceDetector();
     void endDistanceDetector();
+    void printA111Version();
 
 
 private:

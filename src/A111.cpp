@@ -13,6 +13,11 @@ A111::~A111()
 }
 //Methoden
 
+void A111::printA111Version()
+{
+    printf("Acconeer software version %s\n", acc_version_get());
+}
+
 
 void A111::startDistanceDetector()
 {
