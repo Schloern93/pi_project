@@ -15,8 +15,6 @@ set(SDK_DIR_A111 "/home/pi/wa/sdk/rpi_sparkfun")
 #Add static libs
 add_library(libacc_detector_distance STATIC IMPORTED GLOBAL)
 add_library(libacconeer STATIC IMPORTED GLOBAL)
-# add_library(libgpiod STATIC IMPORTED GLOBAL)
-
 
 # Set Properties for libs
 set_target_properties(libacc_detector_distance PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${SDK_DIR_A111}/include)
@@ -25,12 +23,17 @@ set_target_properties(libacc_detector_distance PROPERTIES IMPORTED_LOCATION ${SD
 set_target_properties(libacconeer PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${SDK_DIR_A111}/include)
 set_target_properties(libacconeer PROPERTIES IMPORTED_LOCATION ${SDK_DIR_A111}/lib/libacconeer.a)
 
-# set_target_properties(libgpiod PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${SDK_DIR_A111}/include)
-# set_target_properties(libgpiod PROPERTIES IMPORTED_LOCATION ${SDK_DIR_A111}/lib/libgpiod.so.2.1.0)
-
 
 #Add cpp
-add_executable(object_detection src/main.cpp src/CameraModule.cpp ${SDK_DIR_A111}/source/acc_board_rpi_sparkfun.c src/A111.cpp)
+add_executable(object_detection
+	src/main.cpp
+	src/A111.cpp
+	${SDK_DIR_A111}/source/acc_libspi.c
+	${SDK_DIR_A111}/source/acc_libgpiod.c
+	${SDK_DIR_A111}/source/acc_board_rpi_sparkfun.c	
+	${SDK_DIR_A111}/source/acc_integration_linux.c
+	${SDK_DIR_A111}/source/acc_integration_log.c
+)
 #add_executable(object_detection src/main.cpp)
 
 # Set out dir for Runtime
@@ -45,7 +48,7 @@ target_include_directories(object_detection PUBLIC ${SDK_DIR_A111}/include)
 target_link_libraries(object_detection PUBLIC  
     libacc_detector_distance  
     libacconeer
-    #libgpiod
+    gpiod
 )
 
 

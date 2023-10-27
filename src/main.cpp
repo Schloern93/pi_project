@@ -1,15 +1,19 @@
 
 #include <iostream>
 
-//#include "A111.hpp"
+#include "A111.hpp"
 
 bool  sum_factors(int value1, int value2);
 
 int main(int argc, char** argv){
     
-    //A111 a111object;
-    std::cout << "blabla \n";    
-    //a111object.printA111Version();
+    A111 a111object;
+    
+    a111object.printA111Version();
+    a111object.startDistanceDetector();
+    a111object.endDistanceDetector();
+    
+    
     
     int a = 3;
     int b = 5;
